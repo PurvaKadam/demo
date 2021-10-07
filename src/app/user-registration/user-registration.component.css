@@ -1,0 +1,17 @@
+
+  .info{
+    width: 40%;
+    margin-left: 3%;
+    margin-top: 2.5%;
+  }
+
+  .info2 {
+    align-items: center;
+    height: 90%;
+    width: 40%;
+    margin-right: 10%;
+    margin-top: -42%;
+
+    float: right;
+}
+

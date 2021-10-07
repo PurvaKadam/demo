@@ -1,0 +1,65 @@
+<html>
+    <body>
+        <!-- header section -->
+        <header>
+            <div class="wrapper">
+                <nav>
+                    <p>
+                      <strong><h1>DEMO APP</h1></strong></p>
+                    <ul class="navbar">
+                        <li><a href="#">HOME</a></li>
+                        &nbsp;
+                        <li><a href="#">ABOUT US</a></li>
+                        &nbsp;
+                        <li><a href="#">JOBS</a></li>
+                        &nbsp;
+                        <li><a href="#">CLIENTS</a></li>
+                        &nbsp;
+                        <li><a href="#">EMPLOYERS</a></li>
+                        &nbsp;
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+
+        <!--  body -->
+        <div class="info">
+            <p>
+                <b>Profile</b><br />
+
+                <img [src]="latestUser.photo" style="width: 200px; height: 200px;" />
+                <br />
+            </p>
+        </div>
+
+        <div class="info2">
+            <p>
+                I'm {{latestUser.firstname}} {{latestUser.lastname}} and i'm above {{latestUser.age}} years<br
+                >and you can send your emails to
+                {{latestUser.email}}.<br /> I live in the state of {{latestUser.state}}.<br />
+                 I like to play {{latestUser.tags}}. And please send me newsletters.<br />Please
+                reach out to me on my phone {{latestUser.phone}}.<br />
+                <br />
+
+                <button mat-flat-button color="primary">I Agree</button>
+                &nbsp;
+                <button  mat-flat-button color="accent" (click)="editProfile(latestUser.id)" >Edit Profile</button>
+              </p>
+        </div>
+        <!--  end body -->
+        <div class="info"></div>
+
+        <!-- footer section -->
+        <div class="container3">
+            <p>Subscribe to our Job Seeker Mailing List</p>
+            <div class="input-icons">
+                <span style="font-size: 2em; width: 3em; margin-top: 50%; margin-bottom: 50%;"> <i class="far fa-envelope"></i></span>
+                <input class="input-field" type="text" placeholder="Enter Your Email Address                  " />
+            </div>
+          </div>
+            <!-- end footer section -->
+
+    </body>
+</html>

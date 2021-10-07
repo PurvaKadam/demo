@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <mat-toolbar color="primary"> <span>Register</span></mat-toolbar>
+
+        <form [formGroup]="registration" (ngSubmit)="registerUser()">
+            <form>
+                <div class="info">
+                    <img [src]="ImageURL" style="width: 150px; height: 150px;" />
+                    <input formControlName="photo" type="file" #image accept="image/*"
+                    (change)="HandleFileInput($any($event).target?.files)" /><br />
+                    <strong> upload your photo</strong>
+                </div>
+            </form>
+
+            <div class="info2">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input formControlName="firstname" matInput placeholder="firstname" value="firstname" ng-pattern="/^[a-zA-Z\s]*$/" />
+              </mat-form-field>
+                <span *ngIf="registration.controls['firstname'].invalid && (registration.controls['firstname'].dirty || registration.controls['firstname'].touched)" class="alert">
+                  <small style="color: red;">Please enter Firstname</small>
+                </span>
+
+
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input formControlName="lastname" matInput placeholder="lastname" value="lastname"/>
+                </mat-form-field>
+                <span *ngIf="registration.controls['lastname'].invalid && (registration.controls['lastname'].dirty || registration.controls['lastname'].touched)" class="alert">
+                  <small style="color: red;">Please enter lastname</small>
+                </span>
+                <br />
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input formControlName="email" matInput placeholder="email" value="email" />
+                </mat-form-field>
+                <span *ngIf="registration.controls['email'].invalid && (registration.controls['email'].dirty || registration.controls['email'].touched)" class="alert">
+                  <small style="color: red;">Please enter valid email</small>
+                </span>
+                <br />
+
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input formControlName="phone" matInput placeholder="(541) 754-3010" value="phone"  />
+                </mat-form-field>
+                <span *ngIf="registration.controls['phone'].invalid && (registration.controls['phone'].dirty || registration.controls['phone'].touched)" class="alert">
+                  <small style="color: red;">Please enter valid number</small>
+                </span>
+                <br />
+
+
+                <mat-slider formControlName="age" thumbLabel [displayWith]="formatLabel" tickInterval="1" step="1" min="20" max="60" aria-label="units" > </mat-slider><br />
+                <mat-form-field appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select formControlName="state" >
+                        <mat-option *ngFor="let state of states" [value]="state.value">
+                            {{state.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span *ngIf="registration.controls['state'].invalid && (registration.controls['state'].dirty || registration.controls['state'].touched)" class="alert">
+                  <small style="color: red;">Please select state</small>
+                </span>
+                <br />
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="country" >
+                        <mat-option *ngFor="let Country of Countries" [value]="Country.value">
+                            {{Country.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span *ngIf="registration.controls['country'].invalid && (registration.controls['country'].dirty || registration.controls['country'].touched)" class="alert">
+                  <small style="color: red;">Please select country</small>
+                </span>
+                <br />
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <textarea formControlName="address" matInput placeholder="Address" ></textarea>
+                </mat-form-field>
+                <span *ngIf="registration.controls['address'].invalid && (registration.controls['address'].dirty || registration.controls['address'].touched)" class="alert">
+                  <small style="color: red;">Please enter address</small>
+                </span>
+                <br />
+
+                <mat-form-field class="example-chip-list" appearance="fill">
+                    <mat-label>Tags</mat-label>
+                    <mat-chip-list #chipList aria-label="Fruit selection">
+                        <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
+                            {{fruit.name}}
+                            <button matChipRemove *ngIf="removable">
+                                <mat-icon>cancel</mat-icon>
+                            </button>
+                        </mat-chip>
+                        <input formControlName="tags" [matChipInputFor]="chipList" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+                    </mat-chip-list>
+                </mat-form-field>
+                <span *ngIf="registration.controls['tags'].invalid && (registration.controls['tags'].dirty || registration.controls['tags'].touched)" class="alert">
+                  <small style="color: red;">Please fill Interest</small>
+                </span>
+                <br />
+
+                <mat-checkbox formControlName="chkbox" class="example-margin">subscribe to newsletter</mat-checkbox><br>
+                <br />
+                <button mat-flat-button color="primary"   [disabled]='!registration.valid' (click)="closeDialog()">Submit</button>
+
+            </div>
+            <div class="info"></div>
+        </form>
+    </body>
+</html>

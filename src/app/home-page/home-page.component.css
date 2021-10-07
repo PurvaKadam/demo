@@ -1,0 +1,85 @@
+.banner{
+  height: 100%;
+  background-image:url('https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+}
+
+.text{
+  margin-left: 40%;
+  margin-top: 8%;
+  align-content: center;
+  align-items: center;
+  position:relative;
+}
+
+.mid{
+  height: 50%;
+  background-color: white;
+  margin-top: 10%;
+  padding-top: 6%;
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.wrapper{
+  padding-top: 2%;
+  overflow: hidden;
+}
+
+
+.wrapper nav
+p{
+  margin-left: 15%;
+  font: bold;
+  overflow: hidden;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 50%;
+    overflow: hidden;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a{
+    text-indent: 5%;
+    color: aliceblue;
+    text-decoration: none;
+  }
+
+  .container3{
+  margin-top: -15%;
+  background-color: rgb(19, 18, 49);
+  }
+
+.container3 p{
+  color: azure;
+  padding-top:4%;
+  margin-top: 9.8%;
+  text-align: center;
+  margin-left: 1%;
+  margin-bottom: -1%;
+
+  }
+
+.input-icons {
+    width: 30%;
+    margin-bottom: 4px;
+  }
+
+.input-field {
+      width: 60%;
+      margin-left: 520px;
+      padding: 6px;
+      border-color: rgb(42, 182, 247);
+      text-align: center;
+      color: azure;
+      background-color: rgb(19, 18, 49);
+      margin-bottom: 8%;
+  }
+
+
+

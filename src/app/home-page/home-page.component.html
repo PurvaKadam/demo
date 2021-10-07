@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DemoApp Consultancy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- header section-->
+  <div class="banner">
+    <div class="container">
+      <div class="wrapper">
+        <nav>
+          <p>
+            <b>
+              <h1>DEMO APP</h1>
+            </b>
+          </p>
+          <ul class="navbar">
+            <li>
+              <a href="#">HOME</a>
+            </li>&nbsp;
+            <li>
+              <a href="#">ABOUT US</a>
+            </li>&nbsp;
+            <li>
+              <a href="#">JOBS</a>
+            </li>&nbsp;
+            <li>
+              <a href="#">CLIENTS</a>
+            </li>&nbsp;
+            <li>
+              <a href="#">EMPLOYERS</a>
+            </li>&nbsp;
+            <li>
+              <a href="#">CONTACT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- end header -->
+
+
+    <div class="text">
+        <h1><i>I'm looking for...</i></h1>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput placeholder="Enter a Job Description" value="Enter a Job Description">
+          </mat-form-field>&nbsp;
+          <button mat-flat-button color="basic">Search &nbsp;
+            <i class="fa fa-search"></i>
+          </button><br>
+          <mat-checkbox class="example-margin">Full time</mat-checkbox>&nbsp;
+            <mat-checkbox class="example-margin">Part time/casual/freelance
+          </mat-checkbox><br>
+          <mat-form-field appearance="fill">
+            <mat-label>Location</mat-label>
+              <mat-select formControlName="Location">
+                <mat-option *ngFor="let Locations of Location" [value]="Locations.value">{{Locations.viewValue}}</mat-option>
+              </mat-select>
+          </mat-form-field><br>
+          <button mat-flat-button color="accent" (click)="openDialog()">register</button>
+      </div>
+    <!-- end header section-->
+
+
+    <!-- mid section-->
+    <div class="mid">
+      <p>We're leaders in<br>
+        <h2>Creative Digital Recruitment</h2>
+          <p>Based in surry hills, the creative hub of Sydney we are surrounded by creativity
+          <br>and that reflects on the type of jobs we recruit for.</p><br>
+        <button mat-flat-button color="accent">Find Out More About Us!</button>
+    </div>
+    <!-- end mid section-->
+
+
+    <!-- footer section -->
+      <div class="container3">
+        <p>Subscribe to our Job Seeker Mailing List</p>
+          <div class="input-icons">
+            <span style="font-size: 2em; width: 3em; margin-top: 50%; margin-bottom: 50%;">
+              <i class="far fa-envelope"></i>
+            </span>
+            <input class="input-field" type="text" placeholder="Enter Your Email Address                  ">
+        </div>
+      </div>
+        <!-- end footer section -->
+    </div>
+  </body>
+</html>
